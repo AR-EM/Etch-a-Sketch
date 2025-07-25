@@ -8,28 +8,26 @@ function getRandomColor() {
 }
 
 function gridMaker(rows = 16) {
-  const gridContainer = document.querySelector('.grid-container');
+  const gridContainer = document.querySelector(".grid-container");
   gridContainer.replaceChildren(); //Existing grid removal
 
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < rows; j++) {
-      const cell = document.createElement('div');
-      cell.className = 'grid-item';
+      const cell = document.createElement("div");
+      cell.className = "grid-item";
       cell.style.flex = `0 0 ${100 / rows}%`; //basis = % of container's width
       gridContainer.appendChild(cell);
-      cell.addEventListener('mouseover', () => {
+      cell.addEventListener("mouseover", () => {
         cell.style.background = getRandomColor();
       });
     }
   }
 }
 
-
 function gridSizer() {
   let gridSize = prompt("Enter grid size from 1 to 100: ");
   return gridSize;
 }
-
 
 const resizeBtn = document.querySelector(".btn");
 gridMaker();
