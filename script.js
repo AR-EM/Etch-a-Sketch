@@ -9,15 +9,13 @@ function getRandomColor() {
 
 function gridMaker(rows = 16) {
   const gridContainer = document.querySelector('.grid-container');
-  gridContainer.replaceChildren();
+  gridContainer.replaceChildren(); //Existing grid removal
 
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < rows; j++) {
       const cell = document.createElement('div');
       cell.className = 'grid-item';
-
-      cell.style.flex = `0 0 ${100 / rows}%`;
-
+      cell.style.flex = `0 0 ${100 / rows}%`; //basis = % of container's width
       gridContainer.appendChild(cell);
       cell.addEventListener('mouseover', () => {
         cell.style.background = getRandomColor();
