@@ -45,4 +45,4 @@ resizeBtn.addEventListener("click", (event) => {
   gridMaker(gridSize);
 });
 
-//this is the bug branch
+//this is the main branch
